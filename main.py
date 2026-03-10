@@ -1,12 +1,5 @@
+import os, time
 import importlib
-import os
-import time
-
-OUTPUT_DIR = "outputs"
-WORK_DIR = "."
-
-os.chdir(WORK_DIR)
-
 
 def banner(text):
     print("\n" + "█" * 64)
@@ -23,9 +16,9 @@ def run_task(module_name, label):
 
 
 if __name__ == "__main__":
-    run_task("src.resampling", "Task 1: Resampling Methods")
+    run_task("src.resampling",       "Task 1: Resampling Methods")
     run_task("src.subset_selection", "Task 2a: Subset Selection")
-    run_task("src.shrinkage", "Task 2b: Shrinkage (Ridge & Lasso)")
-    run_task("src.pca_pls", "Task 2c: PCA & PLS")
+    run_task("src.shrinkage",       "Task 2b: Shrinkage (Ridge & Lasso)")
+    run_task("src.pca_pls",         "Task 2c: PCA & PLS")
 
-    print("\n✅ All tasks completed successfully!")
+    print("\n✅ All tasks completed!")

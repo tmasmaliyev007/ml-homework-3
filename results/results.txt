@@ -1,0 +1,180 @@
+(DSPy3.10) PS C:\Users\TaharMasmaliyev007\Documents\ADA_University\Homework3> python .\main.py
+
+████████████████████████████████████████████████████████████████
+█                  Task 1: Resampling Methods                  █
+████████████████████████████████████████████████████████████████
+
+============================================================
+Task 1: Resampling Methods (Credit Approval)
+============================================================
+Data: 690 samples, 6 continuous features (['A2', 'A3', 'A8', 'A11', 'A14', 'A15']), binary target
+
+[1a] Cross‑Validation (K=5, K=10, LOOCV) …
+  CV K= 5  errors: ['0.2420', '0.2362', '0.2333', '0.2449', '0.2478']
+  CV K=10  errors: ['0.2420', '0.2275', '0.2304', '0.2420', '0.2406']
+    LOOCV degree 1 — error: 0.2406
+    LOOCV degree 2 — error: 0.2232
+    LOOCV degree 3 — error: 0.2275
+    LOOCV degree 4 — error: 0.2406
+    LOOCV degree 5 — error: 0.2319
+
+[1b] Bootstrap …
+  Bootstrap degree 1 — mean error: 0.2373
+  Bootstrap degree 2 — mean error: 0.2435
+  Bootstrap degree 3 — mean error: 0.2408
+  Bootstrap degree 4 — mean error: 0.2487
+  Bootstrap degree 5 — mean error: 0.2363
+
+[1c] Plotting …
+
+✓ Plot saved → task1_resampling.png
+
+──────────────────────────────────────────────────────────
+Degree  K=5         K=10        LOOCV       Bootstrap   
+──────────────────────────────────────────────────────────
+1       0.2420      0.2420      0.2406      0.2373      
+2       0.2362      0.2275      0.2232      0.2435      
+3       0.2333      0.2304      0.2275      0.2408      
+4       0.2449      0.2420      0.2406      0.2487      
+5       0.2478      0.2406      0.2319      0.2363      
+
+⏱  Task 1: Resampling Methods completed in 36.5s
+
+████████████████████████████████████████████████████████████████
+█                  Task 2a: Subset Selection                   █
+████████████████████████████████████████████████████████████████
+
+============================================================
+Task 2a: Subset Selection (Credit Approval)
+============================================================
+Using all 15 features, 690 samples
+
+Forward Stepwise Selection (5‑fold CV):
+  Step  1 | +A9     | CV_Err=0.1449  AIC=543.0  BIC=547.5  Adj_R²=0.4286
+  Step  2 | +A15    | CV_Err=0.1435  AIC=511.0  BIC=520.1  Adj_R²=0.4637
+  Step  3 | +A1     | CV_Err=0.1435  AIC=512.9  BIC=526.5  Adj_R²=0.4630
+  Step  4 | +A2     | CV_Err=0.1435  AIC=514.7  BIC=532.9  Adj_R²=0.4625
+  Step  5 | +A3     | CV_Err=0.1435  AIC=516.6  BIC=539.3  Adj_R²=0.4618
+  Step  6 | +A5     | CV_Err=0.1435  AIC=510.0  BIC=537.3  Adj_R²=0.4701
+  Step  7 | +A13    | CV_Err=0.1449  AIC=511.9  BIC=543.7  Adj_R²=0.4695
+  Step  8 | +A4     | CV_Err=0.1478  AIC=508.6  BIC=544.8  Adj_R²=0.4744
+  Step  9 | +A10    | CV_Err=0.1478  AIC=486.7  BIC=527.5  Adj_R²=0.4992
+  Step 10 | +A7     | CV_Err=0.1478  AIC=487.5  BIC=532.9  Adj_R²=0.4997
+  Step 11 | +A8     | CV_Err=0.1478  AIC=485.3  BIC=535.2  Adj_R²=0.5035
+  Step 12 | +A11    | CV_Err=0.1493  AIC=481.5  BIC=535.9  Adj_R²=0.5090
+  Step 13 | +A6     | CV_Err=0.1507  AIC=481.9  BIC=540.8  Adj_R²=0.5100
+  Step 14 | +A14    | CV_Err=0.1536  AIC=479.6  BIC=543.1  Adj_R²=0.5138
+  Step 15 | +A12    | CV_Err=0.1551  AIC=480.2  BIC=548.3  Adj_R²=0.5146
+
+───────────────────────────────────────────────────────
+  Best by CV_Error  : p=2  CV_Error=0.1435
+  Best by AIC       : p=14  AIC=479.6076
+  Best by BIC       : p=2  BIC=520.0627
+  Best by Cp        : p=14  Cp=-1.3020
+  Best by Adj_R²    : p=15  Adj_R²=0.5146
+  Features (Adj_R²) : ['A9', 'A15', 'A1', 'A2', 'A3', 'A5', 'A13', 'A4', 'A10', 'A7', 'A8', 'A11', 'A6', 'A14', 'A12']
+
+Plotting …
+
+✓ Plot saved → task2a_subset_selection.png
+
+⏱  Task 2a: Subset Selection completed in 3.1s
+
+████████████████████████████████████████████████████████████████
+█              Task 2b: Shrinkage (Ridge & Lasso)              █
+████████████████████████████████████████████████████████████████
+
+============================================================
+Task 2b: Shrinkage Methods (Credit Approval)
+============================================================
+Train: (552, 15), Test: (138, 15)
+
+[1] Optimal λ via 5‑fold CV …
+  Ridge optimal λ = 54.555948  (C = 0.0183)
+  Lasso optimal λ = 0.162378  (C = 6.1585)
+
+[2] Bias‑Variance decomposition (Ridge) …
+    λ= 1000.0000  bias=0.2319  var=0.0507  err=0.2365
+    λ=   54.5559  bias=0.0942  var=0.0441  err=0.1183
+    λ=    1.4384  bias=0.1087  var=0.0342  err=0.1099
+    λ=    0.0379  bias=0.1014  var=0.0349  err=0.1112
+    λ=    0.0010  bias=0.0942  var=0.0355  err=0.1100
+
+[3] Bias‑Variance decomposition (Lasso) …
+    λ= 1000.0000  bias=0.4420  var=0.0200  err=0.4443
+    λ=   54.5559  bias=0.0870  var=0.0049  err=0.0896
+    λ=    1.4384  bias=0.1087  var=0.0333  err=0.1084
+    λ=    0.0379  bias=0.1014  var=0.0349  err=0.1112
+    λ=    0.0010  bias=0.0942  var=0.0355  err=0.1100
+
+[4] Plotting …
+
+✓ Plot saved → task2b_shrinkage.png
+
+──────────────────────────────────────────────────
+  Ridge optimal λ = 54.555948
+  Lasso optimal λ = 0.162378
+  Ridge min error: 0.1071 at λ=0.0043
+  Lasso min error: 0.0872 at λ=26.3665
+
+⏱  Task 2b: Shrinkage (Ridge & Lasso) completed in 74.1s
+
+████████████████████████████████████████████████████████████████
+█                      Task 2c: PCA & PLS                      █
+████████████████████████████████████████████████████████████████
+
+============================================================
+Task 2c: PCA and PLS (Credit Approval)
+============================================================
+Train: (552, 15), Test: (138, 15)
+
+[0] Baseline (all features, no reduction) …
+  Baseline CV err = 0.1540, Test err = 0.1087
+
+[1] PCA Component Analysis …
+  PCA nc= 1  CV_err=0.1974  Test_err=0.1957  Cum_var=0.1866
+  PCA nc= 2  CV_err=0.1902  Test_err=0.1812  Cum_var=0.3114
+  PCA nc= 3  CV_err=0.1975  Test_err=0.1812  Cum_var=0.4045
+  PCA nc= 4  CV_err=0.1848  Test_err=0.1884  Cum_var=0.4849
+  PCA nc= 5  CV_err=0.1757  Test_err=0.1739  Cum_var=0.5584
+  PCA nc= 6  CV_err=0.1866  Test_err=0.1812  Cum_var=0.6260
+  PCA nc= 7  CV_err=0.1829  Test_err=0.1812  Cum_var=0.6884
+  PCA nc= 8  CV_err=0.1775  Test_err=0.1884  Cum_var=0.7495
+  PCA nc= 9  CV_err=0.1703  Test_err=0.1739  Cum_var=0.8058
+  PCA nc=10  CV_err=0.1613  Test_err=0.1812  Cum_var=0.8528
+  PCA nc=11  CV_err=0.1630  Test_err=0.1957  Cum_var=0.8980
+  PCA nc=12  CV_err=0.1468  Test_err=0.1159  Cum_var=0.9378
+  PCA nc=13  CV_err=0.1468  Test_err=0.1159  Cum_var=0.9740
+  PCA nc=14  CV_err=0.1540  Test_err=0.1087  Cum_var=0.9990
+  PCA nc=15  CV_err=0.1540  Test_err=0.1087  Cum_var=1.0000
+
+[2] PLS Component Analysis (up to 15) …
+  PLS nc= 1  CV_err=0.1576  Test_err=0.1377
+  PLS nc= 2  CV_err=0.1323  Test_err=0.1159
+  PLS nc= 3  CV_err=0.1450  Test_err=0.1014
+  PLS nc= 4  CV_err=0.1486  Test_err=0.1014
+  PLS nc= 5  CV_err=0.1486  Test_err=0.1014
+  PLS nc= 6  CV_err=0.1504  Test_err=0.1014
+  PLS nc= 7  CV_err=0.1504  Test_err=0.1014
+  PLS nc= 8  CV_err=0.1558  Test_err=0.1014
+  PLS nc= 9  CV_err=0.1558  Test_err=0.1087
+  PLS nc=10  CV_err=0.1540  Test_err=0.1087
+  PLS nc=11  CV_err=0.1540  Test_err=0.1087
+  PLS nc=12  CV_err=0.1576  Test_err=0.1087
+  PLS nc=13  CV_err=0.1595  Test_err=0.1014
+  PLS nc=14  CV_err=0.1595  Test_err=0.1014
+  PLS nc=15  CV_err=0.1558  Test_err=0.1087
+
+[3] Plotting …
+
+✓ Plot saved → task2c_pca_pls.png
+
+────────────────────────────────────────────────────────────
+  Baseline          : CV err = 0.1540   Test err = 0.1087
+  Best PCA (nc=12)  : CV err = 0.1468   Test err = 0.1159
+  Best PLS (nc= 2)  : CV err = 0.1323   Test err = 0.1159
+  → PLS achieves lower CV error with fewer components
+
+⏱  Task 2c: PCA & PLS completed in 3.4s
+
+✅ All tasks completed!
