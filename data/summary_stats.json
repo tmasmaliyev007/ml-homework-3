@@ -1,0 +1,143 @@
+{
+  "n_samples": 4521,
+  "n_features_raw": 16,
+  "n_features_encoded": 43,
+  "subscription_rate_pct": 11.52,
+  "train_test_split": "80/20",
+  "lr_auc": 0.8905,
+  "lda_auc": 0.8885,
+  "qda_auc": 0.8204,
+  "nb_auc": 0.7857,
+  "lda_best_threshold": 0.0274,
+  "confounding_exposure": "duration",
+  "confounding_confounder": "previous",
+  "confounding_change_pct": 0.07,
+  "linear_rmse": 2.5989,
+  "poisson_rmse": 2.6001,
+  "linear_r2": -0.0252,
+  "poisson_r2": -0.0261,
+  "model_comparison": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.8917,
+      "Precision": 0.5536,
+      "Recall": 0.2981,
+      "F1 Score": 0.3875,
+      "ROC AUC": 0.8905
+    },
+    {
+      "Model": "LDA",
+      "Accuracy": 0.8807,
+      "Precision": 0.4767,
+      "Recall": 0.3942,
+      "F1 Score": 0.4316,
+      "ROC AUC": 0.8885
+    },
+    {
+      "Model": "QDA",
+      "Accuracy": 0.8453,
+      "Precision": 0.35,
+      "Recall": 0.4038,
+      "F1 Score": 0.375,
+      "ROC AUC": 0.8204
+    },
+    {
+      "Model": "Naive Bayes",
+      "Accuracy": 0.8254,
+      "Precision": 0.3176,
+      "Recall": 0.4519,
+      "F1 Score": 0.373,
+      "ROC AUC": 0.7857
+    }
+  ],
+  "lr_stats_top10": [
+    {
+      "Feature": "Intercept",
+      "Coefficient": -2.8369781919588686,
+      "Std_Error": 0.08852506606810588,
+      "Z_Statistic": -32.04717395834833,
+      "P_Value": 0.0,
+      "Odds_Ratio": 0.05860248413245303
+    },
+    {
+      "Feature": "age",
+      "Coefficient": -0.07218617615750197,
+      "Std_Error": 0.08405560087319179,
+      "Z_Statistic": -0.8587907933274274,
+      "P_Value": 0.3904559478914882,
+      "Odds_Ratio": 0.930357669270413
+    },
+    {
+      "Feature": "default",
+      "Coefficient": 0.08327572270025335,
+      "Std_Error": 0.06054644961837517,
+      "Z_Statistic": 1.3754022444774383,
+      "P_Value": 0.16900677353073013,
+      "Odds_Ratio": 1.0868414340945132
+    },
+    {
+      "Feature": "balance",
+      "Coefficient": 0.04062579699490099,
+      "Std_Error": 0.06076222524079186,
+      "Z_Statistic": 0.668602850437206,
+      "P_Value": 0.5037488538010182,
+      "Odds_Ratio": 1.0414623142917934
+    },
+    {
+      "Feature": "housing",
+      "Coefficient": -0.1656289598623191,
+      "Std_Error": 0.07740435800775092,
+      "Z_Statistic": -2.13978856133312,
+      "P_Value": 0.03237185804930598,
+      "Odds_Ratio": 0.8473605806547269
+    },
+    {
+      "Feature": "loan",
+      "Coefficient": -0.25534971681680935,
+      "Std_Error": 0.0827685004788138,
+      "Z_Statistic": -3.085107442319449,
+      "P_Value": 0.0020347863336154237,
+      "Odds_Ratio": 0.7746455440114588
+    },
+    {
+      "Feature": "day",
+      "Coefficient": 0.07365092605627564,
+      "Std_Error": 0.07565338434112996,
+      "Z_Statistic": 0.9735311473201912,
+      "P_Value": 0.33028938761377336,
+      "Odds_Ratio": 1.0764309858962273
+    },
+    {
+      "Feature": "duration",
+      "Coefficient": 1.1209680559205504,
+      "Std_Error": 0.059961714490284285,
+      "Z_Statistic": 18.69472988638747,
+      "P_Value": 0.0,
+      "Odds_Ratio": 3.067822590100521
+    },
+    {
+      "Feature": "campaign",
+      "Coefficient": -0.2156201534358079,
+      "Std_Error": 0.09761760715505227,
+      "Z_Statistic": -2.2088244090364215,
+      "P_Value": 0.027186856571763673,
+      "Odds_Ratio": 0.8060414157940244
+    },
+    {
+      "Feature": "pdays",
+      "Coefficient": -0.009396224391685767,
+      "Std_Error": 0.10942898665858702,
+      "Z_Statistic": -0.08586595452082105,
+      "P_Value": 0.9315729758783087,
+      "Odds_Ratio": 0.9906477821849767
+    },
+    {
+      "Feature": "previous",
+      "Coefficient": -0.041132942465387595,
+      "Std_Error": 0.07254118868833577,
+      "Z_Statistic": -0.5670287902519793,
+      "P_Value": 0.5706946214947939,
+      "Odds_Ratio": 0.9597015363784026
+    }
+  ]
+}
